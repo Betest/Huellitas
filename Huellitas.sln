@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29215.179
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Huellitas.Common", "Huellitas.Common\Huellitas.Common.csproj", "{7EF9C57B-FAE7-43B0-AE50-089E622DA579}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Huellitas.Web", "Huellitas.Web\Huellitas.Web.csproj", "{2DD96FAA-3AC7-4CCC-B7C2-1AAC65027FA5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7EF9C57B-FAE7-43B0-AE50-089E622DA579}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EF9C57B-FAE7-43B0-AE50-089E622DA579}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EF9C57B-FAE7-43B0-AE50-089E622DA579}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EF9C57B-FAE7-43B0-AE50-089E622DA579}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DD96FAA-3AC7-4CCC-B7C2-1AAC65027FA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DD96FAA-3AC7-4CCC-B7C2-1AAC65027FA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DD96FAA-3AC7-4CCC-B7C2-1AAC65027FA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DD96FAA-3AC7-4CCC-B7C2-1AAC65027FA5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A8DEDCD2-0603-4D8A-AAE0-29AA9BD21C15}
+	EndGlobalSection
+EndGlobal
