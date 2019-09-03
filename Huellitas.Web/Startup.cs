@@ -56,6 +56,9 @@ namespace Huellitas.Web
 
             services.AddTransient<SeedDb>();//lo inyecta una ves
             services.AddScoped<IUserHelper, UserHelper>();//lo inyecta todas las veces que se llame pero crea una nueva instancia
+            services.AddScoped<ICombosHelper, CombosHelper>();
+            services.AddScoped<IConverterHelper, ConverterHelper>();
+            services.AddScoped<IImageHelper, ImageHelper>();
             //services.AddSingleton<UserHelper>();//pierdo memoria objeto queda cargado permanentemente
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);

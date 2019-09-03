@@ -12,7 +12,7 @@ namespace Huellitas.Web.Data.Entities
 
         [Display(Name = "Tipo mascota")]
         [MaxLength(50, ErrorMessage = "The {0} field can not have more than {1} characters.")]
-        [Required(ErrorMessage = "The field {0} is mandatory.")]
+        [Required(ErrorMessage = "El campo {0} es obligatorio.")]
         public string Name { get; set; }
 
         public ICollection<Pet> Pets { get; set; }//relacion 1 a * con la entidad Mascota

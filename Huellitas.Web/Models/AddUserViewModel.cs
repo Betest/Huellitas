@@ -9,24 +9,24 @@ namespace Huellitas.Web.Models
     public class AddUserViewModel
     {
         [Display(Name = "Email")]
-        [Required(ErrorMessage = "The field {0} is mandatory.")]
+        [Required(ErrorMessage = "El campo {0} es obligatorio.")]
         [MaxLength(100, ErrorMessage = "The {0} field can not have more than {1} characters.")]
         [EmailAddress]
         public string Username { get; set; }
 
         [Display(Name = "Document")]
         [MaxLength(20, ErrorMessage = "The {0} field can not have more than {1} characters.")]
-        [Required(ErrorMessage = "The field {0} is mandatory.")]
+        [Required(ErrorMessage = "El campo {0} es obligatorio.")]
         public string Document { get; set; }
 
         [Display(Name = "First Name")]
         [MaxLength(50, ErrorMessage = "The {0} field can not have more than {1} characters.")]
-        [Required(ErrorMessage = "The field {0} is mandatory.")]
+        [Required(ErrorMessage = "El campo {0} es obligatorio.")]
         public string FirstName { get; set; }
 
         [Display(Name = "Last Name")]
         [MaxLength(50, ErrorMessage = "The {0} field can not have more than {1} characters.")]
-        [Required(ErrorMessage = "The field {0} is mandatory.")]
+        [Required(ErrorMessage = "El campo {0} es obligatorio.")]
         public string LastName { get; set; }
 
         [MaxLength(100, ErrorMessage = "The {0} field can not have more than {1} characters.")]
@@ -37,13 +37,13 @@ namespace Huellitas.Web.Models
         public string PhoneNumber { get; set; }
 
         [Display(Name = "Password")]
-        [Required(ErrorMessage = "The field {0} is mandatory.")]
+        [Required(ErrorMessage = "El campo {0} es obligatorio.")]
         [DataType(DataType.Password)]
         [StringLength(20, MinimumLength = 6, ErrorMessage = "The {0} field must contain between {2} and {1} characters.")]
         public string Password { get; set; }
 
         [Display(Name = "Password Confirm")]
-        [Required(ErrorMessage = "The field {0} is mandatory.")]
+        [Required(ErrorMessage = "El campo {0} es obligatorio.")]
         [DataType(DataType.Password)]
         [StringLength(20, MinimumLength = 6, ErrorMessage = "The {0} field must contain between {2} and {1} characters.")]
         [Compare("Password")]
