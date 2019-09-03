@@ -389,7 +389,7 @@ namespace Huellitas.Web.Controllers
                 await _dataContext.SaveChangesAsync();
                 return RedirectToAction($"{nameof(DetailsPet)}/{model.PetId}");
             }
-
+            model.ServiceTypes = _combosHelper.GetComboServiceTypes();
             return View(model);
         }
 
