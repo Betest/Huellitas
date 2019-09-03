@@ -54,8 +54,9 @@ namespace Huellitas.Web
             });
 
 
-            services.AddTransient<SeedDb>();
-            services.AddScoped<IUserHelper, UserHelper>();
+            services.AddTransient<SeedDb>();//lo inyecta una ves
+            services.AddScoped<IUserHelper, UserHelper>();//lo inyecta todas las veces que se llame pero crea una nueva instancia
+            //services.AddSingleton<UserHelper>();//pierdo memoria objeto queda cargado permanentemente
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

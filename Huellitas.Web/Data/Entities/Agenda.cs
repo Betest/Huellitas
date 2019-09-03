@@ -15,7 +15,7 @@ namespace Huellitas.Web.Data.Entities
         [DataType(DataType.DateTime)]
         [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd H:mm tt}", ApplyFormatInEditMode = true)]
         public DateTime Date { get; set; }
-
+        [Display(Name = "Comentarios")]
         public string Remarks { get; set; }
 
         [Display(Name = "Esta disponible?")]

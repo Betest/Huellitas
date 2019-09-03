@@ -10,15 +10,16 @@ namespace Huellitas.Web.Data.Entities
     {
         public int Id { get; set; }
 
-        [Display(Name = "Name")]
-        [MaxLength(50, ErrorMessage = "The {0} field can not have more than {1} characters.")]
-        [Required(ErrorMessage = "The field {0} is mandatory.")]
+        [Display(Name = "Nombre")]
+        [MaxLength(50, ErrorMessage = "El campo {0} no puede tener mas de {1} caracteres.")]
+        [Required(ErrorMessage = "El campo {0} es obligatorio.")]
         public string Name { get; set; }
 
-        [Display(Name = "Image")]
+        [Display(Name = "Imagen")]
         public string ImageUrl { get; set; }
 
-        [MaxLength(50, ErrorMessage = "The {0} field can not have more than {1} characters.")]
+        [MaxLength(50, ErrorMessage = "El campo {0} no puede tener mas de {1} caracteres.")]
+        [Display(Name = "Raza")]
         public string Race { get; set; }
 
         [Display(Name = "Fecha nacimiento")]

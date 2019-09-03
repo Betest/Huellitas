@@ -12,22 +12,22 @@ using Microsoft.AspNetCore.Authorization;
 namespace Huellitas.Web.Controllers
 {
     [Authorize(Roles = "Admin")]
-    public class ManagersController : Controller
+    public class AgendaController : Controller
     {
         private readonly DataContext _context;
 
-        public ManagersController(DataContext context)
+        public AgendaController(DataContext context)
         {
             _context = context;
         }
 
-        // GET: Managers
+        // GET: Agenda
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Managers.ToListAsync());
+            return View(await _context.Agendas.ToListAsync());
         }
 
-        // GET: Managers/Details/5
+        // GET: Agenda/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -35,39 +35,39 @@ namespace Huellitas.Web.Controllers
                 return NotFound();
             }
 
-            var manager = await _context.Managers
+            var agenda = await _context.Agendas
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (manager == null)
+            if (agenda == null)
             {
                 return NotFound();
             }
 
-            return View(manager);
+            return View(agenda);
         }
 
-        // GET: Managers/Create
+        // GET: Agenda/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Managers/Create
+        // POST: Agenda/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id")] Manager manager)
+        public async Task<IActionResult> Create([Bind("Id,Date,Remarks,IsAvailable")] Agenda agenda)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(manager);
+                _context.Add(agenda);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(manager);
+            return View(agenda);
         }
 
-        // GET: Managers/Edit/5
+        // GET: Agenda/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -75,22 +75,22 @@ namespace Huellitas.Web.Controllers
                 return NotFound();
             }
 
-            var manager = await _context.Managers.FindAsync(id);
-            if (manager == null)
+            var agenda = await _context.Agendas.FindAsync(id);
+            if (agenda == null)
             {
                 return NotFound();
             }
-            return View(manager);
+            return View(agenda);
         }
 
-        // POST: Managers/Edit/5
+        // POST: Agenda/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id")] Manager manager)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Date,Remarks,IsAvailable")] Agenda agenda)
         {
-            if (id != manager.Id)
+            if (id != agenda.Id)
             {
                 return NotFound();
             }
@@ -99,12 +99,12 @@ namespace Huellitas.Web.Controllers
             {
                 try
                 {
-                    _context.Update(manager);
+                    _context.Update(agenda);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ManagerExists(manager.Id))
+                    if (!AgendaExists(agenda.Id))
                     {
                         return NotFound();
                     }
@@ -115,10 +115,10 @@ namespace Huellitas.Web.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(manager);
+            return View(agenda);
         }
 
-        // GET: Managers/Delete/5
+        // GET: Agenda/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -126,30 +126,30 @@ namespace Huellitas.Web.Controllers
                 return NotFound();
             }
 
-            var manager = await _context.Managers
+            var agenda = await _context.Agendas
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (manager == null)
+            if (agenda == null)
             {
                 return NotFound();
             }
 
-            return View(manager);
+            return View(agenda);
         }
 
-        // POST: Managers/Delete/5
+        // POST: Agenda/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var manager = await _context.Managers.FindAsync(id);
-            _context.Managers.Remove(manager);
+            var agenda = await _context.Agendas.FindAsync(id);
+            _context.Agendas.Remove(agenda);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ManagerExists(int id)
+        private bool AgendaExists(int id)
         {
-            return _context.Managers.Any(e => e.Id == id);
+            return _context.Agendas.Any(e => e.Id == id);
         }
     }
 }
